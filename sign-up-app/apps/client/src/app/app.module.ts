@@ -7,6 +7,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './pages/signup/signup.component';
 import { UsersComponent } from './pages/users/users.component';
 
+// Services
+import { UsersService } from './pages/users/users.service';
+
 // Ant-design
 import { AppAntDesignModule } from './app-antd.module';
 
@@ -19,7 +22,9 @@ import { AppAntDesignModule } from './app-antd.module';
     HttpClientModule,
     AppAntDesignModule,
   ],
-  providers: [],
+  providers: [
+    UsersService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,5 +1,18 @@
 
-<div>Message: {{ hello$ | async | json }}</div>
-<button nz-button nzSize="large" nzType="primary" >Primary</button>
-<sign-up-app-users></sign-up-app-users>
+<nz-layout data-cy="app-layout">
+    <nz-header>
+      <div class="logo"></div>
+      <ul nz-menu nzTheme="dark" nzMode="horizontal">
+        <li nz-menu-item>Home</li>
+        <li nz-menu-item>Sign-up</li>
+        <li nz-menu-item>Users</li>
+      </ul>
+    </nz-header>
+    <nz-content data-cy="app content">
+        <sign-up-app-signup></sign-up-app-signup>
+        <sign-up-app-users></sign-up-app-users>
+    </nz-content>
+    <nz-footer>Ant Design ©2020 Implement By Angular</nz-footer>
+  </nz-layout>
+
 
