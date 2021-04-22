@@ -1,1 +1,8 @@
-<p>users works!</p>
+
+<div class="inner-content">
+    <ul nz-list nzBordered  data-cy="users-list" >
+            <li *ngFor="let user of users" nz-list-item>
+                {{ user.firstName }} {{ user.lastName }} {{ user.email }} {{ user.password }}
+            </li>
+    </ul>
+</div>

@@ -3,7 +3,7 @@ import {
   Body, Param, HttpException, HttpStatus
 } from '@nestjs/common';
 
-import { Message, User } from '@sign-up-app/api-interfaces';
+import { User } from '@sign-up-app/api-interfaces';
 
 import { AppService } from './app.service';
 
@@ -13,7 +13,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get('')
-  getAllUsers(): Array<User> {
+  getAllUsers(): User[] {
     return this.appService.getUsers();
   }
 
@@ -22,7 +22,7 @@ export class AppController {
     return this.appService.getUser(id);
   }
 
-  @Post('add')
+  @Post('')
   postUser(@Body() user: User): number  {
 
     this.appService.getUsers().forEach(item => {

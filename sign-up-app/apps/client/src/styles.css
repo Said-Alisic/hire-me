@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+
+.logo {
+    width: 120px;
+    height: 31px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px 24px 16px 0;
+    float: left;
+}
+
+nz-layout {
+    min-width: 100vh;
+    min-height: 100vh;
+}
+    
+[nz-menu] {
+    line-height: 64px;
+}
+
+
+nz-content {
+    padding: 0 50px;
+    padding-top: 10px;
+}
+
+nz-footer {
+    text-align: center;
+}
+
+.inner-content {
+    background: #fff;
+    padding: 24px;
+    min-height: 280px;
+}
