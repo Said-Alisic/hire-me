@@ -14,7 +14,9 @@ export class SignupComponent  {
   constructor(private readonly usersService: UsersService) { }
 
 
-  addUser(user: User) {
+  handleSubmitForm(user: User) {
+    console.log('User added');
+    
     this.usersService.addUser(user).subscribe();
   }
 

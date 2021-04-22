@@ -50,5 +50,4 @@ export class UsersService {
     return throwError("Data error occurred, please try again");
   }
 
-
 }
