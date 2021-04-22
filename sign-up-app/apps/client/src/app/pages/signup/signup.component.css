@@ -1,0 +1,26 @@
+.login-form {
+    max-width: 300px;
+  }
+
+.login-form-margin {
+    margin-bottom: 16px;
+  }
+
+.login-form-forgot {
+    float: right;
+  }
+
+.login-form-button {
+    width: 100%;
+  }
+
+.input {
+  position: relative; 
+  left: 20%;
+  text-align: left;
+
+}
+
+nz-input-group {
+    width: 60%;
+  }
