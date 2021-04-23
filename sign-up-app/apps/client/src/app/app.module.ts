@@ -15,11 +15,13 @@ import { routing } from './app.routing';
 
 // Ant-design
 import { AppAntDesignModule } from './app-antd.module';
+import { SuccessComponent } from './pages/success/success.component';
+import { ErrorComponent } from './pages/error/error.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, SignupComponent, UsersComponent],
+  declarations: [AppComponent, SignupComponent, UsersComponent, SuccessComponent, ErrorComponent],
   imports: [
     BrowserModule, 
     HttpClientModule,

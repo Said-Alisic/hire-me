@@ -7,6 +7,7 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzTypographyModule } from 'ng-zorro-antd/typography';
 
 @NgModule({
   exports: [
@@ -17,6 +18,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
     NzFormModule,
     NzInputModule,
     NzIconModule,
+    NzTypographyModule,
   ]
 })
 export class AppAntDesignModule {

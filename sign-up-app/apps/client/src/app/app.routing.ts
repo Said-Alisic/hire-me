@@ -1,6 +1,8 @@
 import { Routes, RouterModule } from '@angular/router';
 import { SignupComponent } from './pages/signup/signup.component';
 import { UsersComponent } from './pages/users/users.component';
+import { SuccessComponent } from './pages/success/success.component';
+import { ErrorComponent } from './pages/error/error.component';
 
 
 const appRoutes: Routes = [
@@ -16,15 +18,15 @@ const appRoutes: Routes = [
     },
     { 
         path: 'users', 
-        component: UsersComponent
+        component: UsersComponent,
     },
     { 
         path: 'success', 
-        // Add success component
+        component: SuccessComponent,
     },
     { 
-        path: 'error', 
-        // Add error component
+        path: '**', 
+        component: ErrorComponent,
     },
 ];
 
