@@ -13,14 +13,13 @@ import { UsersService } from '../users/users.service';
 })
 export class SignupComponent implements OnInit {
   signUpForm!: FormGroup;
-  validateForm: any;
+  // apiError: boolean = false;     // TO-DO: implement error handling for Routing when form is invalid
 
   constructor(private readonly usersService: UsersService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit() {
     // [ Validators.required, Validators.pattern('^[a-zA-Z]+$')]
-
-    // Validators not working; fix later
+    
     this.signUpForm = this.fb.group({
       firstName: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
@@ -36,11 +35,11 @@ export class SignupComponent implements OnInit {
       this.signUpForm.controls[key].updateValueAndValidity();
     }
     if(this.signUpForm.valid) {
+      
       this.usersService.addUser(user).subscribe(() => {
         this.router.navigate(['/success']);
       });
-    }
-    
+    } 
   }
 
 }

@@ -13,16 +13,32 @@
             <th>Last Name</th>
             <th>Email</th>
             <th>Password</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let user of currentPageData">
+          <tr *ngFor="let user of currentPageData; ">
             <td>{{ user.firstName }}</td>
             <td>{{ user.lastName }}</td>
             <td>{{ user.email }}</td>
             <td>{{ user.password }}</td>
-            <td>
-              <button>Delete User</button>
+            <td> 
+              <button nz-button 
+                      nzDanger 
+                      nzSize="default" 
+                      nzType="primary"
+                      class="actionBtn" 
+                      (click)="deleteUser(user.email)"
+                      data-cy="delete-user">
+                      <i nz-icon nzType="delete" nzTheme="fill"></i>
+              </button>
+              <button nz-button 
+                      nzSize="default" 
+                      nzType="primary"
+                      class="actionBtn" 
+                      data-cy="update-user">
+                      <i nz-icon nzType="edit" nzTheme="outline"></i>
+              </button>
             </td>
           </tr>
         </tbody>

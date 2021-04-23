@@ -42,11 +42,11 @@ export class AppController {
     return user
   }
 
-  @Delete(':id')
-  deleteUser(@Param('id') id: number): User {
+  // Email is used as ID due to pagination handling on client side
+  @Delete(':email')
+  deleteUser(@Param('email') email: string): User {
 
-    const deletedUser: User = this.appService.getUser(id);
-    this.appService.deleteUser(id);
+    const deletedUser: User = this.appService.deleteUser(email);
 
     return deletedUser
   }

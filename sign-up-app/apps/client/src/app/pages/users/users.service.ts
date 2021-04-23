@@ -40,8 +40,9 @@ export class UsersService {
             .pipe(catchError(this.handleError));
   }
 
-  deleteUser(id) {
-    return this.http.delete(`api/users/${id}`);
+  
+  deleteUser(email) {
+    return this.http.delete(`api/users/${email}`);
   }
 
   // The HttpClient will emit an error of type HttpErrorResponse
