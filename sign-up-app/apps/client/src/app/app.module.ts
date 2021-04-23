@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 // Components
@@ -21,11 +22,20 @@ import { ErrorComponent } from './pages/error/error.component';
 
 
 @NgModule({
-  declarations: [AppComponent, SignupComponent, UsersComponent, SuccessComponent, ErrorComponent],
+  declarations: [
+    AppComponent, 
+    SignupComponent, 
+    UsersComponent, 
+    SuccessComponent, 
+    ErrorComponent
+  ],
   imports: [
     BrowserModule, 
+    BrowserAnimationsModule,
     HttpClientModule,
     AppAntDesignModule,
+    FormsModule,
+    ReactiveFormsModule,
     routing,
   ],
   providers: [
