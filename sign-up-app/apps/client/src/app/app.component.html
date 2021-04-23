@@ -1,17 +1,18 @@
 
 <nz-layout data-cy="app-layout">
-    <nz-header>
-      <!-- <div class="logo"></div> -->
-      <ul nz-menu nzTheme="dark" nzMode="horizontal">
-        <li class='menu-item' nz-menu-item>Sign-up</li>
-        <li class='menu-item'  nz-menu-item>Users</li>
-      </ul>
-    </nz-header>
-    <nz-content data-cy="app-content">
-        <sign-up-app-signup></sign-up-app-signup>
-        <!-- <sign-up-app-users></sign-up-app-users> -->
-    </nz-content>
-    <nz-footer >Ant Design ©2020 Implement By Angular</nz-footer>
-  </nz-layout>
+  <nz-header>
+    <!-- <div class="logo"></div> -->
+    <ul nz-menu nzTheme="dark" nzMode="horizontal">
+      <li [routerLink]="['/sign-up']" class='menu-item' nz-menu-item>Sign-up</li>
+      <li [routerLink]="['/users']" class='menu-item' nz-menu-item>Users</li>
+    </ul>
+  </nz-header>
+  <nz-content data-cy="app-content">
+    <router-outlet>
+
+    </router-outlet>
+  </nz-content>
+  <nz-footer >Ant Design ©2020 Implement By Angular</nz-footer>
+</nz-layout>
 
 
