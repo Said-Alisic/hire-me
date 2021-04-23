@@ -49,7 +49,16 @@ export class AppService {
     return user;
   }
 
-  deleteUser(id: number): User {
+  // Email is used as ID due to pagination handling on client side
+  deleteUser(email: string): User {
+    let id: number;
+    
+    // Search for user by email and find the index it matches in our users array
+    this.users.items.forEach((user, index) => {
+      if(user.email === email) {
+        id = index;
+      }
+    });
 
     const deletedUser: User = this.users.items[id];
     this.users.items.splice(id, 1);

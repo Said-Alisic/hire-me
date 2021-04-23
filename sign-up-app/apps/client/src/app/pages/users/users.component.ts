@@ -21,7 +21,8 @@ export class UsersComponent implements OnInit{
 
   // Functions similarly to React useEffect...
   ngOnInit() {
-    this.getAllUsers()
+    this.getAllUsers();
+    
 
   }
 
@@ -34,15 +35,18 @@ export class UsersComponent implements OnInit{
   getAllUsers() {
     this.usersService.getAllUsers().subscribe((users) => {
        this.users = users;  
-    })
+    });
   }
 
   updateUser(id, user: User) {
     this.usersService.updateUser(id, user).subscribe();
   }
 
-  deleteUser(id) {
-    this.usersService.deleteUser(id).subscribe();
+  // Email is used as ID due to pagination handling
+  deleteUser(email) {
+    this.usersService.deleteUser(email).subscribe(() => {
+      this.getAllUsers();
+    });
   }
     
 
