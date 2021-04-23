@@ -1,24 +1,38 @@
 <div class="inner-content">
-    <!-- <form nz-form class="login-form" (ngSubmit)="handleSubmitForm()"> -->
-  <form  nz-form class="sign-up-form">
+    <form [formGroup]="signUpForm"
+          nz-form 
+          class="sign-up-form"
+          (ngSubmit)="handleSubmitForm(signUpForm.value)">
     <nz-form-item class="input">
-      <nz-form-control nzErrorTip="Please write your first name!">
+      <nz-form-control nzErrorTip="Please input your first name!">
         <nz-input-group nzSize="large" >
-          <input type="text" nz-input formControlName="firstName" placeholder="First Name" />
+          <input type="text"
+                  required
+                  nz-input  
+                  formControlName="firstName" 
+                  placeholder="First Name" />
         </nz-input-group>
       </nz-form-control>
     </nz-form-item>
     <nz-form-item class="input">
-      <nz-form-control nzErrorTip="Please write your last name!">
+      <nz-form-control nzErrorTip="Please input your last name!">
         <nz-input-group nzSize="large" >
-          <input type="text" nz-input formControlName="lastName" placeholder="Last Name" />
+          <input type="text"
+                  required
+                  nz-input  
+                  formControlName="lastName" 
+                  placeholder="Last Name" />
         </nz-input-group>
       </nz-form-control>
     </nz-form-item>
     <nz-form-item class="input">
-      <nz-form-control nzErrorTip="Please write your last name!">
+      <nz-form-control nzErrorTip="Please input your email!">
         <nz-input-group nzSize="large" >
-          <input type="email" nz-input formControlName="email" placeholder="Email" />
+          <input type="email" 
+                  required
+                  nz-input  
+                  formControlName="email" 
+                  placeholder="Email" />
         </nz-input-group>
       </nz-form-control>
     </nz-form-item>
@@ -26,14 +40,18 @@
       <nz-form-control nzErrorTip="Please make a password!">
         <!-- <nz-input-group nzPrefixIcon="lock"> reference for myself -->
         <nz-input-group nzSize="large" >
-          <input type="password" nz-input formControlName="password" placeholder="Password" />
+          <input type="password"
+                  required
+                  nz-input  
+                  formControlName="password" 
+                  placeholder="Password" />
         </nz-input-group>
       </nz-form-control>
     </nz-form-item>
     <button nz-button 
             nzSize="large" 
+            nzType="primary"
             class="sign-up-button" 
-            nzType="primary" 
             data-cy="sign-up">
             Sign up
     </button>
