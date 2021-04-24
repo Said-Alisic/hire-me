@@ -1,19 +1,18 @@
 
 <div class="inner-content">
+  <h4 nz-typography>Users</h4>
     <nz-table nzShowPagination
-                [nzData]="users" 
-                [nzBordered]="true"
-                [nzPageSize]="6" 
-                [nzHideOnSinglePage]="true"
-                (nzCurrentPageDataChange)="onCurrentPageDataChange($event)"
-                data-cy="users-table">
+              [nzData]="users" 
+              [nzBordered]="true"
+              [nzPageSize]="6" 
+              [nzHideOnSinglePage]="true"
+              (nzCurrentPageDataChange)="onCurrentPageDataChange($event)"
+              data-cy="users-table">
         <thead>
           <tr>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Email</th>
-            <th>Password</th>
-            <th>Actions</th>
+            <th>E-mail</th>
           </tr>
         </thead>
         <tbody>
@@ -21,25 +20,6 @@
             <td>{{ user.firstName }}</td>
             <td>{{ user.lastName }}</td>
             <td>{{ user.email }}</td>
-            <td>{{ user.password }}</td>
-            <td> 
-              <button nz-button 
-                      nzDanger 
-                      nzSize="default" 
-                      nzType="primary"
-                      class="actionBtn" 
-                      (click)="deleteUser(user.email)"
-                      data-cy="delete-user">
-                      <i nz-icon nzType="delete" nzTheme="fill"></i>
-              </button>
-              <button nz-button 
-                      nzSize="default" 
-                      nzType="primary"
-                      class="actionBtn" 
-                      data-cy="update-user">
-                      <i nz-icon nzType="edit" nzTheme="outline"></i>
-              </button>
-            </td>
           </tr>
         </tbody>
       </nz-table>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 // Interfaces
-import { User, Users } from '@sign-up-app/api-interfaces';
+import { Users } from '@sign-up-app/api-interfaces';
 
 // Services
 import { UsersService } from './users.service';
@@ -19,16 +19,12 @@ export class UsersComponent implements OnInit{
   
   constructor(private readonly usersService: UsersService) {}
 
-  // Functions similarly to React useEffect...
   ngOnInit() {
     this.getAllUsers();
-    
-
   }
 
   onCurrentPageDataChange(currentPageData: Users): void {
     this.currentPageData = currentPageData;
-
   }
 
   // Service method calls
@@ -37,17 +33,5 @@ export class UsersComponent implements OnInit{
        this.users = users;  
     });
   }
-
-  updateUser(id, user: User) {
-    this.usersService.updateUser(id, user).subscribe();
-  }
-
-  // Email is used as ID due to pagination handling
-  deleteUser(email) {
-    this.usersService.deleteUser(email).subscribe(() => {
-      this.getAllUsers();
-    });
-  }
-    
 
 }

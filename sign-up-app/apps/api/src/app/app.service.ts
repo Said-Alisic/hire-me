@@ -1,30 +1,38 @@
 import { Injectable } from '@nestjs/common';
-import { Message, User, Users } from '@sign-up-app/api-interfaces';
+import { User, Users } from '@sign-up-app/api-interfaces';
 
 @Injectable()
 export class AppService {
 
   users: Users = {
     items: [
-            {
-              firstName: 'New',
-              lastName: 'User',
-              email: 'newuser@shield.ai',
-              password: '1234',
-            },
-            {
-              firstName: 'Old',
-              lastName: 'Baws',
-              email: 'oldbaws@shield.ai',
-              password: '4321',
-            }
+      {   
+        firstName: 'New', 
+        lastName: 'User', 
+        email: 'newuser@shieldapp.ai',            
+      },
+      {
+        firstName: 'Erlich',
+        lastName: 'Bachman',
+        email: 'erlich@shieldapp.ai',
+      },
+      {
+        firstName: 'Richard',
+        lastName: 'Hendricks',
+        email: 'richard@shieldapp.ai',
+      },
+      {
+        firstName: 'Jared',
+        lastName: 'Dunn',
+        email: 'jared@shieldapp.ai',
+      },
+      {
+        firstName: 'Laurie',
+        lastName: 'Bream',
+        email: 'laurie@shieldapp.ai',
+      },
     ]
     };
-
-  // reference; delete before submission
-  getData(): Message {
-    return { message: 'Welcome to Shield Sign-Up!' };
-  }
 
   getUser(id: number): User {
     
@@ -43,26 +51,4 @@ export class AppService {
     return this.users.items.length;
   }
 
-  updateUser(id: number, user: User): User {
-    this.users.items[id] = user;
-
-    return user;
-  }
-
-  // Email is used as ID due to pagination handling on client side
-  deleteUser(email: string): User {
-    let id: number;
-    
-    // Search for user by email and find the index it matches in our users array
-    this.users.items.forEach((user, index) => {
-      if(user.email === email) {
-        id = index;
-      }
-    });
-
-    const deletedUser: User = this.users.items[id];
-    this.users.items.splice(id, 1);
-
-    return deletedUser;
-  }
 }

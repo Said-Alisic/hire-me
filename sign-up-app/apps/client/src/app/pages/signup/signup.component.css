@@ -18,7 +18,12 @@
   position: relative; 
   left: 20%;
   text-align: left;
+  
 
+}
+
+button {
+  width: 25%;
 }
 
 nz-input-group {

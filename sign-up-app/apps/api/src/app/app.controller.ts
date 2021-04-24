@@ -1,6 +1,6 @@
 import { 
-  Controller, Get, Post, Put, Delete, 
-  Body, Param, HttpException, HttpStatus
+  Controller, Get, Post, Body, 
+  Param, HttpException, HttpStatus
 } from '@nestjs/common';
 
 import { User } from '@sign-up-app/api-interfaces';
@@ -34,20 +34,4 @@ export class AppController {
     return this.appService.addUser(user);
   }
 
-  @Put(':id')
-  updateUser(@Param('id') id: number, @Body() user: User): User {
-
-    this.appService.updateUser(id, user);
-    
-    return user
-  }
-
-  // Email is used as ID due to pagination handling on client side
-  @Delete(':email')
-  deleteUser(@Param('email') email: string): User {
-
-    const deletedUser: User = this.appService.deleteUser(email);
-
-    return deletedUser
-  }
 }

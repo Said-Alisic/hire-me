@@ -35,16 +35,6 @@ export class UsersService {
             .pipe(catchError(this.handleError));
   }
 
-  updateUser(id, user: User) {
-    return this.http.put(`api/users/${id}`, user)
-            .pipe(catchError(this.handleError));
-  }
-
-  
-  deleteUser(email) {
-    return this.http.delete(`api/users/${email}`);
-  }
-
   // The HttpClient will emit an error of type HttpErrorResponse
   private handleError(error: HttpErrorResponse) {
     console.log(error);
