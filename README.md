@@ -63,7 +63,7 @@ Although it wasn't a requirement, a demo of the application can be found [here](
 
 **Running the application on the local machine**
 1. Pull or clone the repository to a folder of your choosing with git
-2. Navigate to the `sign-up-app`
+2. Navigate to the `sign-up-app` folder where you placed the project
 3. Run `npm install` to install all necessary dependencies
 4. Run `npm run dev` to run both the api and client server concurrently for development
 5. Navigate to `localhost:4200` to access the application
