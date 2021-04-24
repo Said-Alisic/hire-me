@@ -66,13 +66,13 @@ Although it wasn't a requirement, a demo of the application can be found [here](
 2. Navigate to the `sign-up-app` folder where you placed the project
 3. Run `npm install` to install all necessary dependencies
 4. Run `npm run dev` to run both the api and client server concurrently for development
-5. Navigate to `localhost:4200` to access the application
-6. Navigate to `localhost:3333/api/users` to access the users API data from our backend
+5. Navigate to http://localhost:4200/ to access the application
+6. Navigate to http://localhost:3333/api/users to access the users API data from our backend
 
 **Building and running the production build**
 1. Run `npm run build` to build both the api and client server production builds
 2. Run `npm start` to start the production build server
-3. Navigate to `localhost:3333/` to access the production build application
+3. Navigate to http://localhost:3333/ to access the production build application
 
 
 ## Design Decisions
