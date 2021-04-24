@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { User } from '@sign-up-app/api-interfaces';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+
 // Services
 import { UsersService } from '../users/users.service';
 
@@ -13,12 +14,10 @@ import { UsersService } from '../users/users.service';
 })
 export class SignupComponent implements OnInit {
   signUpForm!: FormGroup;
-  // apiError: boolean = false;     // TO-DO: implement error handling for Routing when form is invalid
 
   constructor(private readonly usersService: UsersService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit() {
-    // [ Validators.required, Validators.pattern('^[a-zA-Z]+$')]
     
     this.signUpForm = this.fb.group({
       firstName: ['', [Validators.required]],
@@ -37,7 +36,7 @@ export class SignupComponent implements OnInit {
     if(this.signUpForm.valid) {
       
       this.usersService.addUser(user).subscribe(() => {
-        this.router.navigate(['/success']);
+        this.router.navigate(['/success'], { state: user });
       });
     } 
   }

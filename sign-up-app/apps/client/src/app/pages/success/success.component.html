@@ -1,5 +1,5 @@
 <div class="inner-content">
-    <h3 nz-typography>Hello {{ 'new user' }}!</h3>
-    <h3 nz-typography>Thanks for signin' up!</h3>
-    <a nz-button nzSize="large" nzType="link" [routerLink]="['/']">Go back to sign-up</a>
+    <h3 nz-typography>Hello {{ (user | async)?.firstName }} {{ (user | async)?.lastName }}!</h3>
+    <h3 nz-typography data-cy="signup-thanks">Thanks for signin' up!</h3>
+    <a nz-button nzSize="large" nzType="link" [routerLink]="['/']">Go back</a>
 </div>

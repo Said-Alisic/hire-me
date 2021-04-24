@@ -1,25 +1,22 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 
 // Components
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './pages/signup/signup.component';
 import { UsersComponent } from './pages/users/users.component';
+import { SuccessComponent } from './pages/success/success.component';
+import { ErrorComponent } from './pages/error/error.component';
 
-// Services and Routin g
+// Services and Routing
 import { UsersService } from './pages/users/users.service';
 import { routing } from './app.routing';
 
 // Ant-design
 import { AppAntDesignModule } from './app-antd.module';
-import { SuccessComponent } from './pages/success/success.component';
-import { ErrorComponent } from './pages/error/error.component';
-
-
 
 @NgModule({
   declarations: [
@@ -27,7 +24,7 @@ import { ErrorComponent } from './pages/error/error.component';
     SignupComponent, 
     UsersComponent, 
     SuccessComponent, 
-    ErrorComponent
+    ErrorComponent,
   ],
   imports: [
     BrowserModule, 
@@ -36,6 +33,7 @@ import { ErrorComponent } from './pages/error/error.component';
     AppAntDesignModule,
     FormsModule,
     ReactiveFormsModule,
+    AppAntDesignModule,
     routing,
   ],
   providers: [

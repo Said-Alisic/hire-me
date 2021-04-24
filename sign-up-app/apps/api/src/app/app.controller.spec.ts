@@ -17,14 +17,13 @@ describe('AppController', () => {
     user = {   
       firstName: 'New', 
       lastName: 'User', 
-      email: 'newuser@shield.ai', 
-      password: '1234'              
+      email: 'newuser@shieldapp.ai',            
     }
 
   });
 
   describe('getUsers', () => {
-    it('should return "Array<Users> with 2 User objects"', () => {
+    it('Should return "Array of 5 User objects"', () => {
       const appController = app.get<AppController>(AppController);
       expect(appController.getAllUsers()).toEqual(
         expect.arrayContaining([      
@@ -35,35 +34,21 @@ describe('AppController', () => {
   });
 
   describe('getUser', () => {
-    it('should return "User object"', () => {
+    it('Should return "User object"', () => {
       const appController = app.get<AppController>(AppController);
       expect(appController.getUser(0)).toEqual(user);
     });
   });
 
   describe('postUser', () => {
-    it('should return "User object"', () => {
+    it('Should return "Length of array as 6"', () => {
       const appController = app.get<AppController>(AppController);
       expect(appController.postUser({   
         firstName: 'Another', 
         lastName: 'User', 
-        email: 'another@shield.ai', 
-        password: '0011'              
-      })).toEqual(3);
+        email: 'another@shield.ai',          
+      })).toEqual(6);
     });
   });
 
-  describe('updateUser', () => {
-    it('should return "User object"', () => {
-      const appController = app.get<AppController>(AppController);
-      expect(appController.updateUser(1, user)).toEqual(user);
-    });
-  });
-
-  describe('deleteUser', () => {
-    it('should return "User object"', () => {
-      const appController = app.get<AppController>(AppController);
-      expect(appController.deleteUser(0)).toEqual(user);
-    });
-  });
 });

@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { AppAntDesignModule } from '../../app-antd.module';
 
 import { ErrorComponent } from './error.component';
 
@@ -8,7 +10,8 @@ describe('ErrorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ErrorComponent ]
+      declarations: [ ErrorComponent ],
+      imports: [RouterTestingModule, AppAntDesignModule],
     })
     .compileComponents();
   });

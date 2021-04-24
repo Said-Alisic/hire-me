@@ -1,31 +1,16 @@
-import { getGreeting, getAddSignUpButton } from '../support/app.po';
-import { User } from '@sign-up-app/api-interfaces';
-
+import { getThanks, } from '../support/app.po';
 
 describe('client', () => {
-  let user: User;
-
   beforeEach(() => { 
-    cy.visit('/')
+    cy.visit('/success')
 
-    user = {   
-      firstName: 'New', 
-      lastName: 'User', 
-      email: 'newuser@shield.ai', 
-      password: '1234'              
-    }
-    
   });
 
-  // it('should display welcome message', () => {
-  //   // Custom command example, see `../support/commands.ts` file
-  //   cy.login('my-email@something.com', 'myPassword');
+  it('should display welcome message', () => {
 
-  //   // Function helper example, see `../support/app.po.ts` file
-  //   getGreeting().contains('Welcome to Shield Sign-Up!!'); // reference; delete before submission
+    getThanks().contains("Thanks for signin' up!"); 
+  });
 
-  //   // getGreeting().should((m) => expect(m.length).equal(1));
-  // });
-
+  
 
 });
