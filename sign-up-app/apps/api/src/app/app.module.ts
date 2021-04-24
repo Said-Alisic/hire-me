@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { ServeStaticModule } from '@nestjs/serve-static';
+import { ServeStaticModule } from '@nestjs/serve-static'; // For serving static files with server; serving frontend prod build
 import { join } from 'path';
 
 import { AppController } from './app.controller';

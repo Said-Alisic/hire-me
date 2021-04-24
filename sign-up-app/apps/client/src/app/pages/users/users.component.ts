@@ -27,7 +27,6 @@ export class UsersComponent implements OnInit{
     this.currentPageData = currentPageData;
   }
 
-  // Service method calls
   getAllUsers() {
     this.usersService.getAllUsers().subscribe((users) => {
        this.users = users;  
