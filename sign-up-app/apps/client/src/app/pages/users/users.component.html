@@ -4,6 +4,7 @@
     <nz-table nzShowPagination
               [nzData]="users" 
               [nzBordered]="true"
+              [nzOuterBordered]="true"
               [nzPageSize]="6" 
               [nzHideOnSinglePage]="true"
               (nzCurrentPageDataChange)="onCurrentPageDataChange($event)"

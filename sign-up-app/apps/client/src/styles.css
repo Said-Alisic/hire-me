@@ -15,13 +15,9 @@ nz-content {
     padding: 0 50px;
     padding-top: 3vh;
     height: 70vh;
-    background: silver;
+    background: white;
 }
 
-nz-footer {
-    text-align: center;
-    background-color: silver;
-}
 
 .inner-content {
     padding: 24px;
